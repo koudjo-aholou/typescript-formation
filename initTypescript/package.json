@@ -1,0 +1,14 @@
+{
+  "name": "inittypescript",
+  "version": "0.0.0",
+  "description": "demo formation",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Koudjo AHOLOU",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

@@ -1,0 +1,27 @@
+Sure, here's a typical .gitignore file for a TypeScript project:
+
+graphql
+
+# Ignore node_modules directory
+node_modules/
+
+**/node_modules/
+
+# Ignore TypeScript build directory
+/dist/
+
+# Ignore any temporary files
+*.log
+*.tmp
+
+# Ignore Visual Studio Code settings directory
+.vscode/
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore npm debug log
+npm-debug.log*
+
+# Ignore yarn lock file
+yarn.lock
