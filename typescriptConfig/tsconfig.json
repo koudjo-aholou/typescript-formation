@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "commonjs", 
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -20,3 +20,23 @@
     "allowJs": true
   }
 }
+/* 
+"module": "commonjs" : "declaration": true : Indique à TypeScript de générer des fichiers de déclaration (.d.ts) pour votre code. Ces fichiers permettent à d'autres parties de votre code (ou des bibliothèques tierces) d'utiliser vos types.
+"removeComments": true : Demande à TypeScript de supprimer les commentaires lors de la compilation, ce qui peut réduire la taille du code généré.
+"emitDecoratorMetadata": true : Demande à TypeScript de générer les métadonnées des décorateurs. Ceci est nécessaire pour l'utilisation avancée des décorateurs dans les bibliothèques telles que Angular.
+"experimentalDecorators": true : Active le support des décorateurs expérimentaux, qui sont une fonctionnalité avancée de TypeScript.
+"allowSyntheticDefaultImports": true : Autorise l'importation de modules sans déclaration explicite de leur structure. Ceci est souvent utilisé dans des environnements où les modules peuvent être importés de différentes manières.
+"target": "es2017" : Spécifie la version du langage ECMAScript que TypeScript va cibler lors de la compilation.
+"sourceMap": true : Demande à TypeScript de générer des fichiers source map (.map), qui permettent de mapper le code TypeScript généré au code source original, facilitant ainsi le débogage.
+"outDir": "./dist" : Spécifie le répertoire de sortie pour les fichiers JavaScript générés.
+"baseUrl": "./" : Définit la base URL pour résoudre les chemins relatifs aux modules. Dans ce cas, les chemins relatifs commenceront à partir du répertoire racine du projet.
+"incremental": true : Active la compilation incrementale, où TypeScript garde une trace des fichiers modifiés depuis la dernière compilation pour une compilation plus rapide.
+"skipLibCheck": true : Évite la vérification des fichiers de définition de type ("declaration files") dans le répertoire node_modules.
+"strictNullChecks": false : Désactive la vérification stricte des types null et undefined.
+"noImplicitAny": false : Désactive l'interdiction des types any implicites, permettant ainsi l'utilisation de types any sans déclaration explicite.
+"strictBindCallApply": false : Désactive la vérification stricte des méthodes bind, call et apply.
+"forceConsistentCasingInFileNames": false : Désactive la vérification de la casse cohérente dans les noms de fichiers.
+"noFallthroughCasesInSwitch": false : Désactive la vérification des cases de switch sans break.
+"allowJs": true : Autorise l'inclusion de fichiers JavaScript dans le projet TypeScript, permettant ainsi le mélange de code JavaScript et TypeScript dans le même projet.
+
+*/
