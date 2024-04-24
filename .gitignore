@@ -10,6 +10,7 @@ node_modules/
 # Ignore TypeScript build directory
 /dist/
 
+
 # Ignore any temporary files
 *.log
 *.tmp
