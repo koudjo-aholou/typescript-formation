@@ -1,21 +1,37 @@
-// readOnly
+// ReadOnly
 
-// const arraySym = (arr: readonly number[]) => {
-//   let sum = 0;
-//   arr.push(22);
+// array amd tuple
+
+// type Label = 'bmw';
+// type Person = {
+//   name: string;
 // };
 
-// index signature for dynamic data
+// const arraySym = (arr: readonly number[], label: Label, object: Person) => {
+//   const sum = 0;
+//   // Readonly not working for string and object
+//   // label = 'toto';
 
-// interface Mag {
+//   const newObj = { ...object } as const;
+
+//   // Arr.push(22);
+// };
+
+// Index signature for dynamic data
+
+// type Mag = {
 //   titre: string;
 //   perso: string;
 //   mangaka: string;
-// }
-// type Manga = { [property: string]: string };
+// };
+// type Manga = Record<string, string>; // Index signature
 // type Manga2 = Record<string, string>;
 
-// type OptionsKeys = keyof Mag; //titre, perso, mangaka
+// type OptionsKeys = keyof Mag; // Titre, perso, mangaka
+
+// type ObjetOptionnel = {
+//   [Propriete in keyof ObjetA]?: ObjetA[Propriete];
+// };
 
 // const _manga: Manga | Manga2 = {
 //   titre: 'Berserk',
@@ -23,7 +39,10 @@
 //   mangaka: 'Kentaro Miura',
 // };
 
-//typeof
+// Typeof
 
-const x = 10;
-let y: typeof x;
+// const x: any = 10;
+// const y: typeof x = 12;
+
+// const xx = 10;
+// Const yy: typeof x;
