@@ -1,3 +1,6 @@
+// Transform to .ts
+// Type this variable
+
 export const mockMangaJson = [
   {
     titre: 'Naruto',

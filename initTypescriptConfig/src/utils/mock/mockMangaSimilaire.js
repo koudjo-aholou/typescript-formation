@@ -1,5 +1,8 @@
+// Transform to ts
+// type it
+
 export const mangaSimilaire = {
-  mangas_similaires: [
+  mangasSimilaires: [
     {
       titre: 'Fairy Tail',
       auteur: 'Hiro Mashima',
