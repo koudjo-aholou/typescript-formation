@@ -1,7 +1,9 @@
 // Transform to ts
 // type it
 
-export const mangaSimilaire = {
+import { MangaSimilaires } from '../../interface/MangaSimilaire';
+
+export const mangaSimilaire: MangaSimilaires = {
   mangasSimilaires: [
     {
       titre: 'Fairy Tail',

@@ -1,4 +1,9 @@
-export const MangaAnime = {
+// Transform to ts
+// type it
+
+import { MangaAnime } from '../../interface/MangaAnime';
+
+export const mangaAnime: MangaAnime = {
   anime: [
     {
       titre: 'Naruto',

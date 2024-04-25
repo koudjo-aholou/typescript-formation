@@ -1,7 +1,9 @@
 // Transform to .ts
 // Type this variable
 
-export const mockMangaJson = [
+import { ListMangas } from '../../interface/Manga';
+
+export const mockMangaJson: ListMangas = [
   {
     titre: 'Naruto',
     auteur: 'Masashi Kishimoto',
