@@ -46,4 +46,4 @@
 
 // const xx = 10;
 // Const yy: typeof x;
-const testAny: any = 22;
+// const testAny: any = 22;
