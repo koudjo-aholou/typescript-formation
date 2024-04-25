@@ -7,12 +7,7 @@ import {
   Manga,
   MangaAndAnime,
 } from '../interface/Manga';
-import {
-  AllMangas,
-  Anime,
-  MangaAndAnimeDict,
-  MangaAnime,
-} from '../interface/MangaAnime';
+import { Anime, MangaAnime } from '../interface/MangaAnime';
 
 export const displayManInfoThumbnail = (mangas: ListMangas) => {
   const infoThumbnail: InfoThumbnail[] = mangas?.map(
@@ -31,11 +26,11 @@ export const formatMangaAnime = (
 ) => {
   const { anime } = mangasAnime;
 
-  //refacto here
-  const dictnNime: MangaAndAnimeDict = createDictionary(anime);
+  const dictnNime = createDictionary(anime);
 
   const updateManga: MangaAndAnime[] = mangas.map((manga) => {
     const key = sanitizeString(manga.titre);
+
     const isAnime = dictnNime?.[key]?.isAnime;
 
     return { ...manga, isAnime };
@@ -47,12 +42,16 @@ export const sanitizeString = (text: string): string => {
   return slugify(text, { lower: true, replacement: '' });
 };
 
-// Add Manga
-export const createDictionary = (arr: Anime[]) => {
-  const dic = arr.reduce((acc: MangaAndAnimeDict, item) => {
-    const key: string = sanitizeString(item.titre);
-    acc[key] = { ...item };
-    return acc;
-  }, {});
+export const createDictionary = <T extends Anime | Manga>(
+  arr: T[],
+): Record<string, T> => {
+  const dic = arr.reduce(
+    (acc, item) => {
+      const key: string = sanitizeString(item.titre);
+      acc[key] = { ...item };
+      return acc;
+    },
+    {} as Record<string, T>,
+  );
   return dic;
 };

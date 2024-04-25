@@ -47,3 +47,16 @@
 // const xx = 10;
 // Const yy: typeof x;
 // const testAny: any = 22;
+
+//statisfies :
+// type Keys = "personID" | "personName" | "personEmail" | "personAge";
+
+// const person = {
+//   personID: 12345,
+//   personName: "Jacky",
+//   personEmail: "jacky@testing.com",
+//   personAge: 22,
+// } satisfies Record<Keys, string | number>;
+
+// person.personName.toUpperCase();
+// person.personAge.toFixed();

@@ -24,10 +24,10 @@ export class Manga {
 }
 
 // Exemple d'utilisation de la classe
-const livre1 = new Manga(
-  'Naruto',
-  'Masashi Kishimoto',
-  1999,
-  ['Action', 'Aventure', 'Ninja'],
-  72,
-);
+// const livre1 = new Manga(
+//   'Naruto',
+//   'Masashi Kishimoto',
+//   1999,
+//   ['Action', 'Aventure', 'Ninja'],
+//   72,
+// );
