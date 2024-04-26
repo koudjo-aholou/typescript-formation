@@ -2,14 +2,15 @@ import { ApiProperty } from '@nestjs/swagger';
 
 
 export class CreatePostDTO implements PostAPI {
-    @ApiProperty()
-    id: number;
+  @ApiProperty()
+  // initialisation  plus tard
+  id!: number;
 
     @ApiProperty()
-    title: string;
+  title!: string;
 
     @ApiProperty()
-    idPost: string;
+  idPost!: string;
 
 }
 
