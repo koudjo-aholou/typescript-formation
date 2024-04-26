@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
+const expressPost = require('express');
+const routerPost = expressPost.Router();
 const postService = require('../service/postService');
 
-router.get('/posts', async (req, res) => {
+routerPost.get('/posts', async (req, res) => {
     try {
         const posts = await postService.getPostsFromExternalAPI();
         res.json(posts);
@@ -12,7 +12,7 @@ router.get('/posts', async (req, res) => {
     }
 });
 
-router.get('/posts/:id', async (req, res) => {
+routerPost.get('/posts/:id', async (req, res) => {
   try {
       const postId = req.params.id;
       const post = await postService.getPostByIdFromExternalAPI(postId);
@@ -23,7 +23,7 @@ router.get('/posts/:id', async (req, res) => {
   }
 });
 
-router.post('/posts', async (req, res) => {
+routerPost.post('/posts', async (req, res) => {
   try {
       const postData = req.body;
       const createdPost = await postService.createPostToExternalAPI(postData);
@@ -34,7 +34,7 @@ router.post('/posts', async (req, res) => {
   }
 });
 
-router.patch('/posts/:id', async (req, res) => {
+routerPost.patch('/posts/:id', async (req, res) => {
   try {
       const postId = req.params.id;
       const updatedData = req.body;
@@ -46,23 +46,9 @@ router.patch('/posts/:id', async (req, res) => {
   }
 });
 
-async function deletePostFromExternalAPI(postId) {
-  try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
-          method: 'DELETE',
-      });
-      if (response.ok) {
-          return; // No need to return anything, just indicate success
-      } else {
-          throw new Error('Failed to delete post');
-      }
-  } catch (error) {
-      console.error('Error sending request:', error);
-      throw new Error('Error sending request');
-  }
-}
 
-router.delete('/posts/:id', async (req, res) => {
+
+routerPost.delete('/posts/:id', async (req, res) => {
   try {
       const postId = req.params.id;
       await postService.deletePostFromExternalAPI(postId);
@@ -72,4 +58,4 @@ router.delete('/posts/:id', async (req, res) => {
       res.status(500).json({ message: 'Internal Server Error' });
   }
 });
-module.exports = router;
+module.exports = routerPost;

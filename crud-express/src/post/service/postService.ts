@@ -10,7 +10,7 @@ async function getPostsFromExternalAPI() {
     }
 }
 
-async function getPostByIdFromExternalAPI(id) {
+async function getPostByIdFromExternalAPI(id:any) {
   try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
       const data = await response.json();

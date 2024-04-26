@@ -1,10 +1,10 @@
-const express = require('express');
+const expressMain = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const postController = require('./post/controller/postController');
 
 // Middleware pour parser le JSON
-app.use(express.json());
+app.use(expressMain.json());
 
 app.use('/api/data', postController);
 
