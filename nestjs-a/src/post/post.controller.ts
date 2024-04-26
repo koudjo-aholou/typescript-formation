@@ -19,7 +19,7 @@ export class PostController {
         }
   }
   
-  @Get('posts/:id')
+  @Get('/:id')
   @ApiResponse({ status: 200, description: 'Returns a post Id from external API.', type: CreatePostDTO })
   async getPostbyId(  @Param('id') id: number,): Promise<PostAPI> {
         try {
@@ -30,7 +30,7 @@ export class PostController {
         }
   }
   
-  @Post('posts')
+  @Post()
   async postPost(  @Body() createPostDTO: PostAPI): Promise<PostAPI> {
     try {
         return await this.postService.createPostToExternalAPI(createPostDTO);
@@ -40,7 +40,7 @@ export class PostController {
     }
   }
   
-  @Delete('posts:id')
+  @Delete('/:id')
   async deleteByIdPost(@Param('id') id:number): Promise<void> {
     try {
         return await this.postService.deletePostFromExternalAPI(id);
@@ -51,16 +51,9 @@ export class PostController {
   }
   
   @Patch(':id')
-    
-    // updatePostDto
-  
   async update<T>(@Param('id') id: number, @Body() updatePostDto: PatchPost<T>): Promise<PostAPI> {
     return this.postService.updatePostToExternalAPI(id, updatePostDto);
   }
 }
 
-const x= {
-  id: 12,
-  title: 'test',
-}
 
