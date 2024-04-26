@@ -73,6 +73,17 @@ app.use('/api/data', postController);
   
 // });
 
+// //Prochain dev :
+
+// app.get('/api/data/user', (req, res) => {
+//     fetch('https://jsonplaceholder.typicode.com/users')
+//         .then(response => response.json())
+//       .then(data => res.json(data))
+//       .catch(error => {
+//         console.error('Erreur lors de l\'envoi de la requête :', error);
+//         res.status(500).json({ message: 'Erreur lors de l\'envoi de la requête' });
+//       });
+//   });
 // Démarrer le serveur
 app.listen(PORT, () => {
     console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
